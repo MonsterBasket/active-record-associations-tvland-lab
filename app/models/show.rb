@@ -3,9 +3,9 @@ class Show < ActiveRecord::Base
   has_many :characters
   belongs_to :network
 
-  def
-
   def actors_list
-
+    characters.map do |character|
+      character.actor.full_name
+    end
   end
 end
